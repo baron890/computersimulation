@@ -1,0 +1,26 @@
+import math
+import random
+
+def function (x) :
+    return math.log(x) / x
+    #Funktion einsetzten, welche integriert werden soll
+
+count = 0.0
+in_area = 0.0
+
+while count < 100000:
+
+    x_coord = random.uniform(1, 10)
+    #In den Grenzen von [1, 10]; X-Koordinaten Definitonsbereich 
+    y_coord = random.uniform(0, 1/math.e)
+    #Mit [0, 1/e] Y-Koordinaten Wertebereich
+    
+    if y_coord < function(x_coord):
+        in_area += 1
+    count += 1
+
+area_box = 9 / math.e 
+
+result = (in_area / count)*area_box
+
+print(result)
